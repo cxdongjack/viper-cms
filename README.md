@@ -12,6 +12,12 @@
 - 实现page的增删改查
 - 实现API的转发功能
 
+# 测试用例
+curl -is -X POST --data "a=2" http://localhost:8080/scheme/4
+curl -is http://localhost:8080/scheme/4
+curl -is -X PATCH --data "a=3" http://localhost:8080/scheme/4
+curl -is -X DELETE http://localhost:8080/scheme/4
+
 # 术语表
 
 ## project
