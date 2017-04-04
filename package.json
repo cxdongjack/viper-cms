@@ -1,0 +1,16 @@
+{
+  "name": "viper-cms",
+  "version": "1.0.0",
+  "description": "backend for cms, supply key-value storage and proxy server",
+  "main": "index.js",
+  "repository": {},
+  "author": "chenxiaodong <cxdongjack@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "tingodb": "^0.5.1"
+  }
+}
