@@ -9,21 +9,18 @@
 原型版本使用TingoDb，使用文件存储，后期可以考虑迁移
 
 ## 目标功能
-- 实现page的增删改查
+- 实现collection的增删改查功能
 - 实现API的转发功能
 
 # 测试用例
-curl -is -X POST --data "a=2" http://localhost:8080/scheme
-curl -is http://localhost:8080/scheme/4
-curl -is -X PATCH --data "a=3" http://localhost:8080/scheme/4
-curl -is -X DELETE http://localhost:8080/scheme/4
+curl -is -X POST --data "a=2" http://localhost:8080/collection
+curl -is http://localhost:8080/collection/4
+curl -is -X PATCH --data "a=3" http://localhost:8080/collection/4
+curl -is -X DELETE http://localhost:8080/collection/4
 
 curl -is -X POST --data-urlencode 'url=http://dushu.xiaomi.com/store/v0/fiction/list/11730?start=0&count=1' http://localhost:8080/proxy
 
 # 术语表
 
-## project
-project是page的容器
-
-## page
-构成page的scheme
+## collection
+key-value的存储容器

@@ -1,9 +1,9 @@
 var Engine = require('tingodb')();
 
 var db = new Engine.Db('db', {});
-var collection = db.collection('scheme');
+var collection = db.collection('collection');
 
-exports.scheme = {
+exports.collection = {
     add: add,
     del: del,
     update: update,
@@ -12,7 +12,7 @@ exports.scheme = {
 
 function add(obj, callback) {
     collection.insert({
-        body: obj
+        data: obj
     }, callback);
 }
 
@@ -27,7 +27,7 @@ function update(id, data, callback) {
         _id: id
     }, {
         $set: {
-            body: data
+            data: data
         }
     }, callback);
 }
