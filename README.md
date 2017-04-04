@@ -13,12 +13,16 @@
 - 实现API的转发功能
 
 # 测试用例
+```
+# curd
 curl -is -X POST --data "a=2" http://localhost:8080/collection
 curl -is http://localhost:8080/collection/4
 curl -is -X PATCH --data "a=3" http://localhost:8080/collection/4
 curl -is -X DELETE http://localhost:8080/collection/4
 
+# proxy
 curl -is -X POST --data-urlencode 'url=http://dushu.xiaomi.com/store/v0/fiction/list/11730?start=0&count=1' http://localhost:8080/proxy
+```
 
 # 术语表
 
