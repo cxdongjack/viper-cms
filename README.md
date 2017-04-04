@@ -13,7 +13,7 @@
 - 实现API的转发功能
 
 # 测试用例
-curl -is -X POST --data "a=2" http://localhost:8080/scheme/4
+curl -is -X POST --data "a=2" http://localhost:8080/scheme
 curl -is http://localhost:8080/scheme/4
 curl -is -X PATCH --data "a=3" http://localhost:8080/scheme/4
 curl -is -X DELETE http://localhost:8080/scheme/4
@@ -26,4 +26,4 @@ curl -is -X POST --data-urlencode 'url=http://dushu.xiaomi.com/store/v0/fiction/
 project是page的容器
 
 ## page
-存储页面的scheme
+构成page的scheme
