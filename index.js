@@ -12,7 +12,7 @@ server.use(plugins.bodyParser());
 // TODO配置logger
 server.use(restify.requestLogger());
 
-
+// scheme
 var db= require('./db.js');
 server.get('/scheme/:id', function(req, res, next) {
     db.scheme.read(req.params.id, function(err, data) {
@@ -42,6 +42,39 @@ server.del('/scheme/:id', function(req, res, next) {
         res.send(data);
         return next();
     });
+});
+
+// proxy
+server.post('/proxy', function(req, res, next) {
+	// 解析参数，使用httpclient转发请求
+    // proxy args: url, method, body, [headers]
+    var method = (req.body.method || 'get').toLowerCase();
+    // i.e. http://restify.com/#jsonclient
+    // origin: http://restify.com
+    // path: /#jsonclient
+    var match = req.body.url.match(/(https?:\/\/[^/]+)(\/.*)?$/);
+    var origin, path;
+    if (match) {
+        origin = match[1];
+        path = match[2] || '/';
+    }
+
+    var client = restify.createJsonClient({
+          url: origin
+    });
+
+    var handler = function(err, req2, res2, obj) {
+        res.send(obj);
+        return next();
+    }
+
+    var args = [path];
+    if (method == 'post' || method == 'put') {
+        args.push(req.body.body);
+    }
+    args.push(handler);
+
+    client[method].apply(client, args);
 });
 
 server.listen(8080, function() {
