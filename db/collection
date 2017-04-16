@@ -1,3 +1,6 @@
 {"k":"0000000078","o":"0000000047","v":"001"}
 {"_id":2,"_uid":2,"_dt":1491319610319,"_s":"fa089576bc3fa9c96986a662b2972b87"}
 {"data":{"a":"2"},"_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000737","v":"001"}
+{"_id":2,"_uid":2,"_dt":1492336592855,"_s":"4f1c883760ba184bf6335b15530ad5cc"}
+{"data":{"CREATE":{"source":"/cms2/misc/product/cross_platform_ad","params":{"a":1},"form":{"filter":{"clazz":"text","title":"名字"},"file_path":{"clazz":"text","title":"地址","placeholder":"请提供HDFS地址"},"t":{"clazz":"text","title":"过期时间","placeholder":"临时请自行转成UTC时间戳"},"title2":{"clazz":"text","title":"备注","type":"textarea"}}},"UPDATE":{"source":"/cms2/misc/product/cross_platform_ad","form":{"id":{"clazz":"text","title":"ID"},"name":{"clazz":"text","title":"名字"}}},"READ":{"source":"/cms2/misc/product/ad_list?ad_setting_id=804&count=1000","params":{"b":1},"columnsKey":"items","columns":[{"label":"ID","prop":"id"},{"label":"名字","prop":"ad_name"}]}},"_id":{"$wrap":"$oid","v":2}}
