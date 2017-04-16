@@ -1,6 +1,6 @@
 var Engine = require('tingodb')();
 
-var db = new Engine.Db('db', {});
+var db = new Engine.Db(__dirname + '/db', {});
 var collection = db.collection('collection');
 
 exports.collection = {
