@@ -15,6 +15,7 @@
 # 测试用例
 ```
 # curd
+curl -is http://localhost:8081/collection
 curl -is -X POST --data "a=2" http://localhost:8081/collection
 curl -is http://localhost:8081/collection/4
 curl -is -X PATCH --data "a=3" http://localhost:8081/collection/4

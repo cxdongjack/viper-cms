@@ -14,6 +14,17 @@ server.use(restify.requestLogger());
 
 // collection
 var db= require('./db.js');
+server.get('/collection', function(req, res, next) {
+    db.collection.readAll(function(err, data) {
+        console.log(arguments);
+        if (!data) {
+            return res.send(404);
+        }
+        res.send(data);
+        return next();
+    });
+});
+
 server.get('/collection/:id', function(req, res, next) {
     db.collection.read(req.params.id, function(err, data) {
         if (!data) {
@@ -78,6 +89,6 @@ server.post('/proxy', function(req, res, next) {
     client[method].apply(client, args);
 });
 
-server.listen(8081, function() {
+server.listen(process.argv[2] || 8081, function() {
     console.log('%s listening at %s', server.name, server.url);
 });

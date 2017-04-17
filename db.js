@@ -3,7 +3,9 @@ var Engine = require('tingodb')();
 var db = new Engine.Db(__dirname + '/db', {});
 var collection = db.collection('collection');
 
+exports._collection = collection;
 exports.collection = {
+    readAll: readAll,
     add: add,
     del: del,
     update: update,
@@ -36,4 +38,9 @@ function read(id, callback) {
     collection.findOne({
         _id: id
     }, callback);
+}
+
+
+function readAll(callback) {
+    collection.find({}).toArray(callback);
 }
